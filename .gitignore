@@ -1,0 +1,42 @@
+# Gitignore for avro-ai-auto-cr
+
+# Pre-commit review outputs (keep structure, ignore individual reviews)
+.pre-commit-reviews/*.md
+!.pre-commit-reviews/README.md
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE files
+.vscode/launch.json
+.vscode/tasks.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Copilot API keys and sensitive config
+.env
+.env.local
+copilot-proxy.log
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/

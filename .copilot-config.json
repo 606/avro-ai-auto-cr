@@ -1,0 +1,34 @@
+{
+  "model": "gpt-4",
+  "temperature": 0.2,
+  "max_tokens": 1500,
+  "critical_patterns": [
+    "security|auth|encrypt|decrypt|password|token|jwt",
+    "sql|database|query|injection|connection|transaction", 
+    "async|await|task|thread|parallel|concurrent",
+    "memory|dispose|using|gc|finalizer|destructor",
+    "controller|service|repository|entity|model",
+    "cache|session|cookie|cors|csrf"
+  ],
+  "skip_patterns": [
+    "^using\\s+",
+    "^\\s*//.*$", 
+    "^\\s*\\[.*\\]\\s*$",
+    "^\\s*namespace\\s+",
+    "^\\s*{\\s*}\\s*$"
+  ],
+  "file_extensions": [".cs", ".js", ".ts", ".sql", ".razor", ".py", ".json", ".yml", ".yaml"],
+  "priority_files": [
+    "*Controller.cs",
+    "*Service.cs", 
+    "*Repository.cs",
+    "*.sql",
+    "appsettings*.json",
+    "*.py",
+    "*.ts",
+    "*.js"
+  ],
+  "batch_size": 5,
+  "complexity_threshold": 10,
+  "diff_size_threshold": 20
+}
