@@ -245,8 +245,8 @@ Analyze the changes."""
             f.write(f"**Files**: {len(reviews)}\n\n")
 
             for review in reviews:
-                f.write(f"## File: {review['file']}\\n\\n")
-                f.write(f"**Critical**: {'YES' if review['critical'] else 'NO'}\\n\\n")
+                f.write(f"## File: {review['file']}\n\n")
+                f.write(f"**Critical**: {'YES' if review['critical'] else 'NO'}\n\n")
                 f.write(review['review'])
                 f.write("\n\n---\n\n")
 

@@ -41,13 +41,22 @@ def main():
     """Filter files by complexity"""
     threshold = 10  # minimum complexity for review
 
+    reviewed_files = []
+    skipped_files = []
+
     for filepath in sys.argv[1:]:
         complexity = get_file_complexity(filepath)
 
         if complexity >= threshold:
-            print(f"[REVIEW] {filepath} (complexity: {complexity})")
+            reviewed_files.append((filepath, complexity))
         else:
-            print(f"[SKIP] {filepath} (complexity: {complexity}) - SKIPPED")
+            skipped_files.append((filepath, complexity))
+
+    # Only print summary to avoid duplication with main review
+    if reviewed_files:
+        print(f"[COMPLEXITY] {len(reviewed_files)} files need detailed review")
+    if skipped_files:
+        print(f"[COMPLEXITY] {len(skipped_files)} files skipped (low complexity)")
 
     return 0
 

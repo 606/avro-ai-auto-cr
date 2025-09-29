@@ -44,13 +44,13 @@ repos:
         pass_filenames: true
         require_serial: true
 
-    # Smart Review Filter - determines which files need detailed review
+    # Smart Review Filter - determines which files need detailed review (info only)
     -   id: smart-review-filter
-        name: Smart Review Filter
+        name: Smart Review Filter (Complexity Analysis)
         entry: python
         args: [scripts/smart-filter.py]
         language: system
-        stages: [pre-commit]
+        stages: [manual]
         files: \.(cs|razor|js|ts|sql|py)$
         pass_filenames: true
         verbose: true
