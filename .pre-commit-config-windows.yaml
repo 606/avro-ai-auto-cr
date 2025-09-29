@@ -1,3 +1,4 @@
+# Windows-compatible pre-commit configuration
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
@@ -16,14 +17,13 @@ repos:
         args: ['--autofix']
     -   id: mixed-line-ending
 
-# AI-powered code review hooks (Windows compatible - using Python directly)
+# AI-powered code review hooks (PowerShell compatible)
 -   repo: local
     hooks:
     # GitHub Copilot Code Review for individual files
     -   id: copilot-review
         name: GitHub Copilot Code Review
-        entry: python
-        args: [scripts/copilot-review.py]
+        entry: powershell.exe -Command "python scripts/copilot-review.py"
         language: system
         stages: [pre-commit]
         types: [file]
@@ -47,21 +47,9 @@ repos:
     # Smart Review Filter - determines which files need detailed review
     -   id: smart-review-filter
         name: Smart Review Filter
-        entry: python
-        args: [scripts/smart-filter.py]
+        entry: powershell.exe -Command "python scripts/smart-filter.py"
         language: system
         stages: [pre-commit]
         files: \.(cs|razor|js|ts|sql|py)$
         pass_filenames: true
         verbose: true
-
-    # Batch Review for large changes (pre-push stage)
-    -   id: batch-copilot-review
-        name: Batch Copilot Review (Large Changes)
-        entry: python
-        args: [scripts/batch-review.py, --threshold=5, --priority=high]
-        language: system
-        stages: [pre-push]
-        types: [file]
-        files: \.(cs|js|ts|py|sql|razor)$
-        pass_filenames: true

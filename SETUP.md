@@ -171,10 +171,10 @@ Edit `.copilot-config.json` to adjust:
    ```powershell
    # Find what's using port 3000
    netstat -ano | findstr :3000
-   
+
    # Kill the process (replace <PID> with actual process ID)
    taskkill /PID <PID> /F
-   
+
    # Or use a different port
    $env:PORT=8080; copilot-proxy
    ```

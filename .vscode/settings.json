@@ -1,47 +1,36 @@
 {
-    // Enables the GitHub Copilot Chat feature for reviewing selected code in the editor.
-    // When set to true, users can initiate code reviews on selected text using Copilot Chat.
-    "github.copilot.chat.reviewSelection.enabled": true,
-    // Enables zooming the editor font using the mouse wheel while holding the Ctrl key.
-    // VS Code workspace settings for avro-ai-auto-cr project:
-    // - Enables zooming the editor with mouse wheel.
-    // - Disables GitLab Duo features: code suggestions, chat, agent platform, and keybinding hints.
-    // - Explicitly disables Duo code suggestions for a wide range of languages.
-    // - Prevents Duo features from activating without a GitLab project.
-    // - Disables Duo code suggestions context for open tabs.
-    "editor.mouseWheelZoom": true,
-    "gitlab.duoCodeSuggestions.enabled": false,
-    "gitlab.duoChat.enabled": false,
-    "gitlab.duoAgentPlatform.enabled": false,
-    "gitlab.duoCodeSuggestions.enabledSupportedLanguages": {
-        "c": false,
-        "csharp": false,
-        "cpp": false,
-        "haml": false,
-        "handlebars": false,
-        "go": false,
-        "java": false,
-        "javascriptreact": false,
-        "javascript": false,
-        "kotlin": false,
-        "python": false,
-        "php": false,
-        "ruby": false,
-        "rust": false,
-        "scala": false,
-        "shellscript": false,
-        "sql": false,
-        "swift": false,
-        "typescript": false,
-        "typescriptreact": false,
-        "svelte": false,
-        "terraform": false,
-        "terragrunt": false,
-        "vue": false
-    },
-    "gitlab.duo.enabledWithoutGitlabProject": false,
-    "gitlab.duoCodeSuggestions.openTabsContext": false,
-    "gitlab.keybindingHints.enabled": false,
-
-     
+  "editor.mouseWheelZoom": true,
+  "github.copilot.chat.reviewSelection.enabled": true,
+  "gitlab.duo.enabledWithoutGitlabProject": false,
+  "gitlab.duoAgentPlatform.enabled": false,
+  "gitlab.duoChat.enabled": false,
+  "gitlab.duoCodeSuggestions.enabled": false,
+  "gitlab.duoCodeSuggestions.enabledSupportedLanguages": {
+    "c": false,
+    "cpp": false,
+    "csharp": false,
+    "go": false,
+    "haml": false,
+    "handlebars": false,
+    "java": false,
+    "javascript": false,
+    "javascriptreact": false,
+    "kotlin": false,
+    "php": false,
+    "python": false,
+    "ruby": false,
+    "rust": false,
+    "scala": false,
+    "shellscript": false,
+    "sql": false,
+    "svelte": false,
+    "swift": false,
+    "terraform": false,
+    "terragrunt": false,
+    "typescript": false,
+    "typescriptreact": false,
+    "vue": false
+  },
+  "gitlab.duoCodeSuggestions.openTabsContext": false,
+  "gitlab.keybindingHints.enabled": false
 }
